@@ -42,6 +42,7 @@ const selectHolidayListSorted = createSelector(selectHolidayListItemsUnFiltered,
   (list, by) => {
     return [...list.sort((lhs, rhs) => {
       if (lhs[by] < rhs[by]) {
+        // TODO: Make this case -insensitive if they are sorting by name.
         return -1;
       }
       if (lhs[by] > rhs[by]) {
